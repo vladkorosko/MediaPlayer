@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <ButtonBar fx:id="fileManager" BorderPane.alignment="CENTER">
+         <buttons>
+            <Button fx:id="openFileButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="File" ButtonBar.buttonData="LEFT" />
+            <Button fx:id="fullScreenButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="FullScreen" ButtonBar.buttonData="RIGHT" />
+         </buttons>
+      </ButtonBar>
+   </top>
+   <center>
+      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" style="-fx-cursor: hand;" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <VBox fx:id="controls" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="timeControl" alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="labelCurrentTime">
+                     <font>
+                        <Font name="Calibri Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="sliderTime" style="-fx-cursor: hand;" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Slider>
+                  <Label fx:id="labelTotalTime" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Bold" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+
+            <HBox fx:id="controlPanel" alignment="CENTER">
+               <children>
+                  <Button fx:id="slowerButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="&lt;&lt;">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="rollbackButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="-10">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="playButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="Play/Stop">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="skipButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="+10">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="fasterButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="&gt;&gt;">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="volumeLabel" text="Volume">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Slider fx:id="volumeSlider" blockIncrement="0.1" max="1.0" style="-fx-cursor: hand;" />
+               </children>
+            </HBox>
+         </children></VBox>
+   </bottom>
+</BorderPane>

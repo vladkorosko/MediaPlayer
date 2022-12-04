@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
@@ -11,20 +12,32 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mediaplayer.Controller">
+   <center>
+      <MediaView fx:id="mediaView" scaleZ="0.0" style="-fx-cursor: hand;" BorderPane.alignment="CENTER">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></MediaView>
+   </center>
    <top>
-      <ButtonBar fx:id="fileManager" BorderPane.alignment="CENTER">
+      <ButtonBar fx:id="fileManager" buttonMinWidth="10.0" prefHeight="30.0" BorderPane.alignment="CENTER">
          <buttons>
             <Button fx:id="openFileButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="File" ButtonBar.buttonData="LEFT" />
-            <Button fx:id="fullScreenButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="FullScreen" ButtonBar.buttonData="RIGHT" />
+            <Button fx:id="fullScreenButton" mnemonicParsing="false" style="-fx-cursor: hand;" ButtonBar.buttonData="RIGHT" />
          </buttons>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
       </ButtonBar>
    </top>
-   <center>
-      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" style="-fx-cursor: hand;" BorderPane.alignment="CENTER" />
-   </center>
    <bottom>
-      <VBox fx:id="controls" BorderPane.alignment="CENTER">
+      <VBox fx:id="controls" prefHeight="60.0" BorderPane.alignment="CENTER">
          <children>
             <HBox fx:id="timeControl" alignment="CENTER_LEFT">
                <children>
@@ -51,32 +64,32 @@
 
             <HBox fx:id="controlPanel" alignment="CENTER">
                <children>
-                  <Button fx:id="slowerButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="&lt;&lt;">
+                  <Button fx:id="slowerButton" mnemonicParsing="false" style="-fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="rollbackButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="-10">
+                  <Button fx:id="rollbackButton" mnemonicParsing="false" style="-fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="playButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="Play/Stop">
+                  <Button fx:id="playButton" mnemonicParsing="false" style="-fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="skipButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="+10">
+                  <Button fx:id="skipButton" mnemonicParsing="false" style="-fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="fasterButton" mnemonicParsing="false" style="-fx-cursor: hand;" text="&gt;&gt;">
+                  <Button fx:id="fasterButton" mnemonicParsing="false" style="-fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Label fx:id="volumeLabel" text="Volume">
+                  <Label fx:id="volumeLabel">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>

@@ -7,12 +7,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MediaPlayer extends Application {
+public class MyMediaPlayer extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MediaPlayer.class.getResource("media-player-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(MyMediaPlayer.class.getResource("media-player-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("MyMedia");
         stage.setScene(scene);
         stage.show();
     }
